@@ -6,4 +6,4 @@ name = "BUNDLE_WITHOUT"
 value = ""
 
 [[io.buildpacks.group]]
-uri = "urn:cnb:registry:reenhanced/buildpack-chrome-with-chromedriver"
+uri = "buildpack-chrome-with-chromedriver-main/"
