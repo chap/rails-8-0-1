@@ -332,6 +332,8 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.2)
     useragent (0.16.11)
+    verbose_migrations (1.0.1)
+      rails (>= 6.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -375,6 +377,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  verbose_migrations
   web-console
 
 RUBY VERSION
