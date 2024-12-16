@@ -7,3 +7,6 @@ value = ""
 
 [[io.buildpacks.group]]
 uri = "buildpack-chrome-with-chromedriver-main/"
+
+[[io.buildpacks.group]]
+uri = "urn:cnb:registry:heroku/ruby"
