@@ -65,4 +65,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'verbose_migrations'
+gem "verbose_migrations"
