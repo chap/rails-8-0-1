@@ -6,5 +6,4 @@ name = "BUNDLE_WITHOUT"
 value = ""
 
 [[io.buildpacks.group]]
-id = "reenhanced/buildpack-chrome-with-chromedriver"
-version = "1.0.2"
+url = "https://github.com/reenhanced/buildpack-chrome-with-chromedriver/archive/refs/tags/1.0.2.tar.gz"
