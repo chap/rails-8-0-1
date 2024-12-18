@@ -11,5 +11,12 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    Capybara.register_driver :chrome do |app|
+      Capybara::Selenium::Driver.new app, browser: :chrome,
+        options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+    end
+    
+    Capybara.javascript_driver = :chrome
   end
 end
