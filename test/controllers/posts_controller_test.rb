@@ -1,6 +1,8 @@
 require "test_helper"
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  include DatabaseCleanerSupport
+
   setup do
     @post = posts(:one)
   end

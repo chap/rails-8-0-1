@@ -66,3 +66,5 @@ end
 # end
 
 gem "verbose_migrations"
+gem "database_cleaner"
+gem "database_cleaner-active_record"
