@@ -5,7 +5,7 @@ require "rails/test_help"
 require 'database_cleaner'
 require 'database_cleaner_support'
 
-DatabaseCleaner.clean_with :truncation
+# DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
 
 
