@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   skip_forgery_protection
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :cors
 
   # GET /posts or /posts.json
   def index
@@ -67,5 +68,12 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.expect(post: [ :title, :body ])
+    end
+
+    def cors
+      headers['Access-Control-Allow-Origin'] = '*'
+      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+      headers['Access-Control-Request-Method'] = '*'
+      headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     end
 end
