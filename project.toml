@@ -1,0 +1,16 @@
+[_]
+schema-version = "0.2"
+
+[[io.buildpacks.build.env]]
+name = "BUNDLE_WITHOUT"
+value = ""
+
+# [[io.buildpacks.build.env]]
+# name = "HEROKU_SKIP_BUNDLE_DIGEST"
+# value = "1"
+# 
+# [[io.buildpacks.group]]
+# uri = "buildpack-chrome-with-chromedriver-main/"
+# 
+# [[io.buildpacks.group]]
+# uri = "urn:cnb:registry:heroku/ruby"
