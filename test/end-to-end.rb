@@ -3,7 +3,7 @@ require "net/http"
 require "json"
 
 class PostsTest < Minitest::Test
-  DEFAULT_HOST = ENV["DEFAULT_HOST"] || "http://localhost:3000"
+  DEFAULT_HOST = ENV["DEFAULT_HOST"] || "https://rails-8-staging-92530b25997a.herokuapp.com"
 
   def test_visiting_the_index
     uri = URI("#{DEFAULT_HOST}/posts.json")
@@ -18,7 +18,7 @@ class PostsTest < Minitest::Test
     req = Net::HTTP::Post.new(uri, { "Content-Type" => "application/json" })
     req.body = { post: { body: "Test body", title: "Test title" } }.to_json
 
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") { |http| http.request(req) }
     assert response.is_a?(Net::HTTPCreated), "Post creation should succeed"
     post = JSON.parse(response.body)
     assert_equal "Test body", post["body"], "Post body should match"
@@ -31,7 +31,7 @@ class PostsTest < Minitest::Test
     req = Net::HTTP::Patch.new(uri, { "Content-Type" => "application/json" })
     req.body = { post: { body: "Updated body", title: "Updated title" } }.to_json
 
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") { |http| http.request(req) }
     assert response.is_a?(Net::HTTPSuccess), "Post update should succeed"
     post = JSON.parse(response.body)
     assert_equal "Updated body", post["body"], "Updated post body should match"
@@ -43,7 +43,7 @@ class PostsTest < Minitest::Test
     uri = URI("#{DEFAULT_HOST}/posts/#{post_id}.json")
     req = Net::HTTP::Delete.new(uri, { "Content-Type" => "application/json" })
 
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") { |http| http.request(req) }
     assert response.is_a?(Net::HTTPSuccess), "Post deletion should succeed"
   end
 
@@ -54,7 +54,7 @@ class PostsTest < Minitest::Test
     req = Net::HTTP::Post.new(uri, { "Content-Type" => "application/json" })
     req.body = { post: { body: "Test body", title: "Test title" } }.to_json
 
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") { |http| http.request(req) }
     post = JSON.parse(response.body)
     post["id"]
   end
