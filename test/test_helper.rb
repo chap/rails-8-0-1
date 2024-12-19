@@ -2,8 +2,8 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 
-require 'database_cleaner'
-require 'database_cleaner_support'
+require "database_cleaner"
+require "database_cleaner_support"
 
 # DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
