@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_forgery_protection
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
