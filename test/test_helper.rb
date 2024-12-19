@@ -22,11 +22,11 @@ module ActiveSupport
 
     # Add more helper methods to be used by all tests here...
 
-    Capybara.register_driver :chrome do |app|
-      Capybara::Selenium::Driver.new app, browser: :chrome,
-        options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
-    end
+    # Capybara.register_driver :chrome do |app|
+    #   Capybara::Selenium::Driver.new app, browser: :chrome_headless,
+    #     options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
+    # end
 
-    Capybara.javascript_driver = :chrome
+    # Capybara.javascript_driver = :chrome_headless
   end
 end
