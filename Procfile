@@ -1,3 +1,3 @@
-web: bin/rails server
+web: bin/rails server --binding "[::]" --port "${PORT:?Error: PORT env var is not set!}"
 css: bin/rails tailwindcss:watch
-release: for i in {1..12}; do date; sleep 5; done && bin/rails db:migrate
+release: bin/rails db:migrate
