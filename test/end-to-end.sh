@@ -20,5 +20,5 @@ if [[ "$http_status" -eq 302 ]]; then
   echo "Success: POST request was successful"
 else
   echo "Error: POST request failed with status code $http_status."
-  # exit 1
+  exit 1
 fi
