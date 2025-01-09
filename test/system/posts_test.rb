@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class PostsTest < ApplicationSystemTestCase
   include DatabaseCleanerSupport
-  
+
   setup do
     @post = posts(:one)
     Capybara.default_host = ENV["DEFAULT_HOST"] if ENV["DEFAULT_HOST"]

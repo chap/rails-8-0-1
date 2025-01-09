@@ -4,17 +4,17 @@ Rake::TaskManager.class_eval do
   end
 end
 
-Rake.application.remove_task 'db:test:prepare'
+Rake.application.remove_task "db:test:prepare"
 
 namespace :db do
-  namespace :test do 
+  namespace :test do
     task :prepare do |t|
       # rewrite the task to not do anything you don't want
-      puts 'skip db:prepare'
+      puts "skip db:prepare"
     end
     task :purge do |t|
       # rewrite the task to not do anything you don't want
-      puts 'skip db:purge'
+      puts "skip db:purge"
     end
   end
 end
