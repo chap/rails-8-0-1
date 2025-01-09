@@ -3,10 +3,13 @@ require_relative "../config/environment"
 require "rails/test_help"
 
 require "database_cleaner"
+require "database_cleaner/active_record"
 require "database_cleaner_support"
 
 # DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.allow_production = true
+DatabaseCleaner.allow_remote_database_url = true
 
 # chrome_bin = ENV.fetch('GOOGLE_CHROME_BIN', nil)
 
